@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Key:
+  = @route_key.key
+%p
+  %b Owner:
+  = @route_key.owner_id
+%p
+  %b Owner type:
+  = @route_key.owner_type
+%p
+  %b Custom route:
+  = @route_key.custom_route
+
+= link_to 'Edit', edit_route_key_path(@route_key)
+\|
+= link_to 'Back', route_keys_path

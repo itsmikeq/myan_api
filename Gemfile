@@ -46,3 +46,7 @@ end
 group :production do
   gem 'unicorn'
 end
+
+# gem 'rails-api'
+gem 'haml-rails'
+gem 'oj'

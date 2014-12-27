@@ -4,7 +4,8 @@
   <div class="col-sm-4">
     <h3>Menu</h3>
     <h4><%= link_to "Users", admin_users_path %> <small>- <%= "#{pluralize(@count, 'user')}" %></small></h4>
-    
+    <h4><%= link_to "CustomRoutes", custom_routes_path %> <small>- <%= "#{pluralize(@routes_count, 'route')}" %></small></h4>
+
     <hr/>
   </div>
   

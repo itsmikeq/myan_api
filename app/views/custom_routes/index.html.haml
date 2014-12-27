@@ -1,0 +1,29 @@
+%h1 Listing custom_routes
+
+%table
+  %thead
+    %tr
+      %th Owner
+      %th Name
+      %th Owner type
+      %th Data
+      %th Version
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @custom_routes.each do |custom_route|
+      %tr
+        %td= custom_route.owner_id
+        %td= custom_route.name
+        %td= custom_route.owner_type
+        %td= custom_route.data
+        %td= custom_route.version
+        %td= link_to 'Show', custom_route
+        %td= link_to 'Edit', edit_custom_route_path(custom_route)
+        %td= link_to 'Destroy', custom_route, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Custom route', new_custom_route_path

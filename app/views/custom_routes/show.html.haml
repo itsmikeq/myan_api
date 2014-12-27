@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Owner:
+  = @custom_route.owner_id
+%p
+  %b Name:
+  = @custom_route.name
+%p
+  %b Owner type:
+  = @custom_route.owner_type
+%p
+  %b Data:
+  = @custom_route.data
+%p
+  %b Version:
+  = @custom_route.version
+
+= link_to 'Edit', edit_custom_route_path(@custom_route)
+\|
+= link_to 'Back', custom_routes_path

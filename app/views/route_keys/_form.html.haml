@@ -1,0 +1,22 @@
+= form_for @route_key do |f|
+  - if @route_key.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@route_key.errors.count, "error")} prohibited this route_key from being saved:"
+      %ul
+        - @route_key.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :key
+    = f.text_field :key
+  .field
+    = f.label :owner_id
+    = f.number_field :owner_id
+  .field
+    = f.label :owner_type
+    = f.text_field :owner_type
+  .field
+    = f.label :custom_route
+    = f.text_field :custom_route
+  .actions
+    = f.submit 'Save'

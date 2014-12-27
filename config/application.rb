@@ -27,7 +27,10 @@ module MyanApi
     config.generators.test_framework false
     
     # autoload lib path
-    config.autoload_paths += %W(#{config.root}/lib)
+    config.autoload_paths += %W(
+      #{config.root}/lib
+      #{config.root}/services
+    )
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
     
   end

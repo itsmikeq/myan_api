@@ -1,0 +1,27 @@
+%h1 Listing route_keys
+
+%table
+  %thead
+    %tr
+      %th Key
+      %th Owner
+      %th Owner type
+      %th Custom route
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @route_keys.each do |route_key|
+      %tr
+        %td= route_key.key
+        %td= route_key.owner_id
+        %td= route_key.owner_type
+        %td= route_key.custom_route
+        %td= link_to 'Show', route_key
+        %td= link_to 'Edit', edit_route_key_path(route_key)
+        %td= link_to 'Destroy', route_key, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Route key', new_route_key_path

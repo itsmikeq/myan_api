@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :members
+  has_many :groups, through: :members
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
   # Validations
   # :email
   validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  
+  scope :admins, -> {where(admin: true)}
   def self.paged(page_number)
     order(admin: :desc, email: :asc).page page_number
   end
